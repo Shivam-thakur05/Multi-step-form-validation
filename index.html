@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Personal detail -->
+    <div class="personal-detail">
+        <h1>Personal Details</h1>
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Full Name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="abc@gmail.com" required>
+            <br>
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" required>
+            <br>
+            <label for="Gender">Gender:</label>
+            <input type="Gender" name="Gender" id="Gender" required>
+            <br>
+            <label for="Age">Age:</label>
+            <input type="text" name="age" id="age" required>
+        </form>
+    </div>
+
+    <!-- Professional detail -->
+    <div class="Professional-detail">
+        <h1>Professional Details</h1>
+        <form method="post">
+            <label for="Education">Education:</label>
+            <select name="Education" id="Education" required>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="B.Sc">BCA</option>
+                <option value="M.Sc">MCA</option>
+            </select>
+            <br>
+
+            <p>SKills :</p>
+            <input type="checkbox" id="Checkbox1" >
+            <label for="Checkbox1">Python Developer</label><br>
+
+            <input type="checkbox" id="Checkbox2">
+            <label for="Checkbox2">React Developer</label><br>
+
+            <input type="checkbox" id="Checkbox3">
+            <label for="Checkbox3">MERN Stack Developer</label><br>
+
+            <input type="checkbox" id="Checkbox4" >
+            <label for="Checkbox4">Problem Solving</label><br></br>
+
+            <label for="Experience">Experience:</label>
+            <input type="number" name="Experience" id="Experience" required>
+            <br>
+            <label for="Current Role">Current Role:</label>
+            <input type="text" name="Current Role" id="Current Role" required>
+    </div>
+
+    <!-- Review and submit -->
+    <div class="review-and-submit">
+        <h1>Review and Submit</h1>
+        <button type="submit">Submit</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
