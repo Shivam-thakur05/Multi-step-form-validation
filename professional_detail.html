@@ -18,37 +18,38 @@
                 <h1>Professional Details</h1>
                 <label for="Education">Education:</label>
                 <select name="Education" id="Education" required>
-                    <option value="B.Tech">B.Tech</option>
-                    <option value="M.Tech">M.Tech</option>
-                    <option value="B.Sc">BCA</option>
-                    <option value="M.Sc">MCA</option>
+                    <option value="">Select Education</option>
+                    <option value="High School">High School</option>
+                    <option value="Bachelor's">Bachelor's</option>
+                    <option value="Master's">Master's</option>
+                    <option value="PhD">PhD</option>
                 </select>
+                <span id="education-error" class="error-message"></span>
                 <br>
-
+                <label for="Experience">Experience:</label>
+                <input type="text" name="Experience" id="Experience" placeholder="Experience" required>
+                <span id="experience-error" class="error-message"></span>
+                <br>
+                <label for="Current Role">Current Role:</label>
+                <input type="text" name="Current Role" id="Current Role" placeholder="Current Role" required>
+                <span id="currentRole-error" class="error-message"></span>
+                <br>
                 <p>Skills :</p>
                 <input type="checkbox" id="Checkbox1">
                 <label for="Checkbox1">Python Developer</label><br>
-
                 <input type="checkbox" id="Checkbox2">
                 <label for="Checkbox2">React Developer</label><br>
-
                 <input type="checkbox" id="Checkbox3">
                 <label for="Checkbox3">MERN Stack Developer</label><br>
-
                 <input type="checkbox" id="Checkbox4">
-                <label for="Checkbox4">Problem Solving</label><br></br>
-
-                <label for="Experience">Experience:</label>
-                <input type="number" name="Experience" id="Experience" required>
+                <label for="Checkbox4">Problem Solving</label><br>
+                <span id="skills-error" class="error-message"></span>
                 <br>
-                <label for="Current Role">Current Role:</label>
-                <input type="text" name="Current Role" id="Current Role" required>
-                
-                <button type="button" class="btn btn-danger" id="back-button"><i class="fas fa-arrow-left"></i>back</button>
-                <button type="button" class="btn btn-success" id="next-button2"><i class="fas fa-arrow-right"></i>next</button>
+                <button type="button" class="btn btn-danger" id="back-button"><i class="fas fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn btn-success" id="next-button2"><i class="fas fa-arrow-right"></i> Next</button>
             </div>
         </form>
     </section>
+    <script src="script.js"></script>
 </body>
-
 </html>

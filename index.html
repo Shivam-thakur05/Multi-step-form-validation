@@ -12,29 +12,39 @@
 
 <body>
     <!-- Personal detail -->
-     <section class="personal">        
+    <section class="personal">        
         <form method="post">
             <div class="personal-detail">
                 <h1>Personal Details</h1>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <span id="name-error" class="error-message"></span>
                 <br>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" placeholder="abc@gmail.com" required>
+                <span id="email-error" class="error-message"></span>
                 <br>
                 <label for="phone">Phone:</label>
-                <input type="tel" name="phone" id="phone" required>
+                <input type="tel" name="phone" id="phone" placeholder="123-456-7890" required>
+                <span id="phone-error" class="error-message"></span>
                 <br>
                 <label for="Gender">Gender:</label>
-                <input type="Gender" name="Gender" id="Gender" required>
+                <select name="Gender" id="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span id="gender-error" class="error-message"></span>
                 <br>
-                <label for="Age">Age:</label>
-                <input type="text" name="age" id="age" required>
-
-                <button type="button" class="btn btn-success" id="next-button"><i class="fas fa-arrow-right"></i>next</button>
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" placeholder="Age" required>
+                <span id="age-error" class="error-message"></span>
+                <br>
+                <button type="button" class="btn btn-success" id="next-button"><i class="fas fa-arrow-right"></i> Next</button>
             </div>    
         </form>
-     </section>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
