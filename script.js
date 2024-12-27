@@ -1,15 +1,12 @@
-// Function to store personal details and navigate to professional details page
+// Function to store personal details and navigate to professional details section
 function storePersonalDetails() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const gender = document.getElementById('Gender').value;
     const age = document.getElementById('age').value;
-
-    // Form validation
     let isValid = true;
 
-    // Name validation
     if (!name || /\d/.test(name)) {
         document.getElementById('name-error').innerText = 'Please enter a valid name without numbers.';
         isValid = false;
@@ -17,7 +14,6 @@ function storePersonalDetails() {
         document.getElementById('name-error').innerText = '';
     }
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailPattern.test(email)) {
         document.getElementById('email-error').innerText = 'Please enter a valid email address.';
@@ -26,7 +22,6 @@ function storePersonalDetails() {
         document.getElementById('email-error').innerText = '';
     }
 
-    // Phone validation
     const phonePattern = /^\d{10}$/;
     if (!phone || !phonePattern.test(phone)) {
         document.getElementById('phone-error').innerText = 'Please enter a valid 10-digit phone number.';
@@ -43,7 +38,6 @@ function storePersonalDetails() {
         document.getElementById('gender-error').innerText = '';
     }
 
-    // Age validation
     if (!age || isNaN(age) || age <= 0) {
         document.getElementById('age-error').innerText = 'Please enter a valid age.';
         isValid = false;
@@ -64,10 +58,11 @@ function storePersonalDetails() {
     };
 
     localStorage.setItem('personalData', JSON.stringify(personalData));
-    window.location.href = 'professional_detail.html';
+    document.getElementById('personal-section').style.display = 'none';
+    document.getElementById('professional-section').style.display = 'block';
 }
 
-// Function to store professional details and navigate to submit page
+// Function to store professional details and navigate to submit section
 function storeProfessionalDetails() {
     const education = document.getElementById('Education').value;
     const experience = document.getElementById('Experience').value;
@@ -79,7 +74,6 @@ function storeProfessionalDetails() {
     if (document.getElementById('Checkbox3').checked) skills.push('MERN Stack Developer');
     if (document.getElementById('Checkbox4').checked) skills.push('Problem Solving');
 
-    // Form validation
     let isValid = true;
 
     if (!education) {
@@ -122,21 +116,44 @@ function storeProfessionalDetails() {
     };
 
     localStorage.setItem('professionalData', JSON.stringify(professionalData));
-    window.location.href = 'submit.html';
+    document.getElementById('professional-section').style.display = 'none';
+    document.getElementById('submit-section').style.display = 'block';
+    displayData();
 }
 
-// Function to retrieve and display data on the submit page
+// Function to retrieve and display data on the submit section
 function displayData() {
     const personalData = JSON.parse(localStorage.getItem('personalData'));
     const professionalData = JSON.parse(localStorage.getItem('professionalData'));
 
-    console.log('Personal Data:', personalData);
-    console.log('Professional Data:', professionalData);
+    const reviewData = `
+        <h2>Personal Data</h2>
+        <p>Name: ${personalData.name}</p>
+        <p>Email: ${personalData.email}</p>
+        <p>Phone: ${personalData.phone}</p>
+        <p>Gender: ${personalData.gender}</p>
+        <p>Age: ${personalData.age}</p>
+        <h2>Professional Data</h2>
+        <p>Education: ${professionalData.education}</p>
+        <p>Experience: ${professionalData.experience}</p>
+        <p>Current Role: ${professionalData.currentRole}</p>
+        <p>Skills: ${professionalData.skills.join(', ')}</p>
+    `;
+
+    document.getElementById('review-data').innerHTML = reviewData;
+    console.log(personalData, professionalData);
 }
 
-// Function to navigate back to the previous page
+// Function to navigate back to the previous section
 function goBack() {
-    window.history.back();
+    document.getElementById('professional-section').style.display = 'none';
+    document.getElementById('personal-section').style.display = 'block';
+}
+
+// Function to navigate back to the professional section from the submit section
+function goBackToProfessional() {
+    document.getElementById('submit-section').style.display = 'none';
+    document.getElementById('professional-section').style.display = 'block';
 }
 
 // Ensure the DOM is fully loaded before attaching event listeners
@@ -153,11 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const submitButton = document.getElementById('submit-button');
     if (submitButton) {
-        submitButton.addEventListener('click', displayData);
+        submitButton.addEventListener('click', function() {
+            alert('Form submitted successfully');
+        });
     }
 
     const backButton = document.getElementById('back-button');
     if (backButton) {
         backButton.addEventListener('click', goBack);
+    }
+
+    const backButton2 = document.getElementById('back-button2');
+    if (backButton2) {
+        backButton2.addEventListener('click', goBackToProfessional);
     }
 });
