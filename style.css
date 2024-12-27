@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f1f1f1;
+}
+/* personal detail */
+.personal,.professional, .submit {
+    height: 100vh;
+    padding: 10%;
+    background-image: url("digi2.jpg");
+    background-size: cover;
+    background-position: center;    
+}
+
+.personal h1, .professional h1, .review-and-submit h1 {
+    text-align: center;
+    color: #050000;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.personal-detail, .professional-detail, .review-and-submit {
+    width: 500px;
+    margin: auto;
+    /* background:beige; */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+}
+
+.personal-detail input[type="text"],
+.personal-detail input[type="email"],
+.personal-detail input[type="tel"],
+.personal-detail input[type="Gender"],
+.professional-detail input[type="text"],
+.professional-detail input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.personal-detail input[type="text"]:focus,
+.personal-detail input[type="email"]:focus,
+.personal-detail input[type="tel"]:focus,
+.personal-detail input[type="Gender"]:focus,
+.professional-detail input[type="text"]:focus,
+.professional-detail input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#next-button, #next-button2{
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40%;
+}
+#next-button{
+    margin-left: 60%;
+}
+#back-button{
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 40%;
+    margin-right: 5rem;
+
+}
+#next-button:hover, #next-button2:hover, #back-button:hover, #submit-button:hover{
+    background-color: #0077ff;
+    
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
